@@ -1,0 +1,16 @@
+paths:
+  /me/profile:
+    get:
+      tags:
+        - Me
+      summary: User's profile
+      security:
+        - bearerAuth: []
+          callCenterAccount: []
+      responses:
+        200:
+          description: Return user's profile infos
+          example:
+            data:
+              id: '...'
+              email: '...'

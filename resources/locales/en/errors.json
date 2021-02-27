@@ -1,0 +1,8 @@
+{
+  "model_not_found": "Model not found",
+  "user_not_found": "User not found",
+  "account_not_found": "Account not found",
+  "admin_role_required": "You must have admin role",
+  "should_confirm_account": "You have to confirm your account first",
+  "Ok": "Ok"
+}

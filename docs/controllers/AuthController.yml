@@ -1,0 +1,114 @@
+paths:
+  /auth/register:
+    post:
+      tags:
+        - Auth
+      summary: Register
+      produces:
+        - application/json
+      parameters:
+        - name: firstname
+          description: Firstname
+          in: formData
+          required: true
+          type: string
+        - name: lastname
+          description: Lastname
+          in: formData
+          required: true
+          type: string
+        - name: email
+          description: Email
+          in: formData
+          required: true
+          type: string
+        - name: password
+          description: Password
+          in: formData
+          required: true
+          type: string
+      responses:
+        200:
+          description: Return success message
+          example:
+            data:
+              message: '...'
+
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: Login
+      parameters:
+        - name: email
+          description: Email
+          in: formData
+          required: true
+          type: string
+        - name: password
+          description: Password
+          in: formData
+          required: true
+          type: string
+      responses:
+        200:
+          description: Return auth token
+          example:
+            data:
+              type: 'bearer'
+              token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQi....'
+
+  /auth/confirmations/{token}?email={email}:
+    get:
+      tags:
+        - Auth
+      summary: confirm password
+      parameters:
+        - name: token
+          description: Token
+          in: path
+          required: true
+          type: string
+        - name: email
+          description: Email
+          in: query
+          required: false
+          type: string
+      responses:
+        200:
+          description: Return auth token
+          example:
+            data:
+              type: 'bearer'
+              token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQi....'
+
+  /auth/passwords:
+    post:
+      tags:
+        - Auth
+      summary: Reset password
+      produces:
+        - application/json
+      parameters:
+        - name: email
+          description: Email
+          in: formData
+          required: true
+          type: string
+        - name: password
+          description: Password
+          in: formData
+          required: true
+          type: string
+        - name: password_reset_token
+          description: Password reset token
+          in: formData
+          required: true
+          type: string
+      responses:
+        200:
+          description: Return success message
+          example:
+            data:
+              message: '...'
+

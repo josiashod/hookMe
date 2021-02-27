@@ -1,0 +1,7 @@
+{
+  "model_not_found": "Entité non trouvé",
+  "account_not_found": "Compte introubable",
+  "admin_role_required": "You must have admin role",
+  "should_confirm_account": "You have to confirm your account first",
+  "Ok": "Ok"
+}

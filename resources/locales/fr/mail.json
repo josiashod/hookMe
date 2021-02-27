@@ -1,0 +1,9 @@
+{
+  "auth": {
+    "signup": {
+      "confirmation": {
+        "subject": "Mail de confirmation de compte"
+      }
+    }
+  }
+}
