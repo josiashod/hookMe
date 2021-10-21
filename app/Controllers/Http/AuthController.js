@@ -6,6 +6,7 @@ const { formatMessage: trans } = use('Antl')
 
 class AuthController {
   async register({ request, auth, response }) {
+    
     const data = request.only(Object.keys(RegisterRules))
     await AuthService.register(auth, data)
 

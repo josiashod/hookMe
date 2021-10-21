@@ -19,6 +19,10 @@ class User extends Model {
     this.addHook('beforeSave', hashPassword)
   }
 
+  files(){
+    return this.hasMany('App/Models/File')
+  }
+
   static get hidden() {
     return [
       'password',

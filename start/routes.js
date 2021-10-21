@@ -23,7 +23,7 @@ Route.group(() => {
   Route.post('auth/register', 'AuthController.register').validator('Auth/Register')
   Route.post('auth/login', 'AuthController.login')
     .validator('Auth/Login')
-    .middleware(['emailVerified'])
+    // .middleware(['emailVerified'])
 
   // Profile & Account
   Route.get('me/profile', 'ProfileController.profile').middleware(['auth'])
@@ -34,6 +34,10 @@ Route.group(() => {
     .as('confirmations.create').validator('Email')
   Route.put('auth/confirmations/:token', 'ConfirmationController.confirm')
     .as('confirmations.verify')
+
+  //Users
+  Route.resource('users', 'UserController').middleware(['auth'])
+  Route.post('users/hook-up/', 'UserController.hookUp').as('users.hook_up').middleware(['auth'])
 })
   .prefix('api')
   .formats(['json'])

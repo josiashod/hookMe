@@ -8,6 +8,10 @@ class AuthRegister extends Validator {
   get rules () {
     return rules
   }
+
+  get validateAll(){
+    return true
+  } 
 }
 
 module.exports = AuthRegister
