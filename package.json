@@ -33,7 +33,8 @@
     "adonis-swagger": "^1.2.9",
     "bcrypt": "^5.0.0",
     "mysql": "^2.18.1",
-    "pg": "^8.5.1"
+    "pg": "^8.5.1",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "prettier": "^2.2.1"
